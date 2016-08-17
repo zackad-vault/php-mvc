@@ -1,4 +1,12 @@
 {
+    "autoload":{
+        "classmap":[
+            "app/core"
+        ],
+        "files":[
+            "app/config/config.php"
+        ]
+    },
     "require": {
         "twig/twig": "^1.24"
     }
