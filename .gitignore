@@ -1,1 +1,4 @@
+# ignore true configuration file
+app/config/config.php
+
 vendor/*
