@@ -1,0 +1,50 @@
+{#
+    Example of simple page not found
+#}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Page Not Found{% endblock %}</title>
+    {% block meta %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    {% endblock %}
+    {% block style %}
+    <style>
+        html, body{
+            margin: 0px;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            background: rgba(12,12,12,0.8);
+        }
+        .content{
+            color: #efefef;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            padding: 15px;
+        }
+        .content h1, .content h2, .content h3, .content h4, .content h5, .content h6{
+            margin: 0px;
+        }
+        .content p{
+            font-size: 1.5em;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+    <div class="container">
+        <div class="content">
+            <h2>Page not Found!</h2>
+            <p>The content that you looking for is not found.</p>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>
