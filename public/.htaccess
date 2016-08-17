@@ -1,0 +1,12 @@
+Options -MultiViews
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Un-comment following line if you're not hosting this app on root url or dedicated subdomain.
+# RewriteBase /your/base/url
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.*)$ index.php?url=$1 [L]
+</IfModule>
