@@ -29,19 +29,30 @@ class App
     {
         $url = $this->parseUrl();
 
-        if (file_exists(APP_DIR . '/controllers/' . $url[0] . '.php')) {
+        if (!isset($url[0])) {
+            if (!file_exists(APP_DIR . '/controllers/' . $this->controller . '.php')) {
+                $this->controller = new Controller;
+                $this->method = '__notFound';
+            }
+        } elseif (!file_exists(APP_DIR . '/controllers/' . $url[0] . '.php')) {
+            $this->controller = new Controller;
+            $this->method = '__notFound';
+            unset($url[0]);
+        } else {
             $this->controller = $url[0];
             unset($url[0]);
         }
-
-        require_once APP_DIR . '/controllers/' . $this->controller . '.php';
-
-        $this->controller = new $this->controller;
+        if (gettype($this->controller) === 'string') {
+            require_once APP_DIR . '/controllers/' . $this->controller . '.php';
+            $this->controller = new $this->controller;
+        }
 
         if (isset($url[1])) {
             if (method_exists($this->controller, $url[1])) {
                 $this->method = $url[1];
                 unset($url[1]);
+            } else {
+                $this->method = '__notFound';
             }
         }
 
