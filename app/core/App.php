@@ -10,12 +10,12 @@ class App
      * Default controller if assigned controller doesn't exists
      * @var string
      */
-    protected $controller = 'home';
+    protected $controller = DEFAULT_CONTROLLER;
     /**
      * Default method to process the request
      * @var string
      */
-    protected $method = 'index';
+    protected $method = DEFAULT_METHOD;
     /**
      * Parameters to be passed to method
      * @var array
