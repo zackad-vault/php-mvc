@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 /**
  * Main proccessing class
  * Assign which controller to proccess the request.
@@ -44,7 +46,8 @@ class App
         }
         if (gettype($this->controller) === 'string') {
             require_once APP_DIR . '/controllers/' . $this->controller . '.php';
-            $this->controller = new $this->controller;
+            $controller = 'Controllers\\' . $this->controller;
+            $this->controller = new $controller;
         }
 
         if (isset($url[1])) {

@@ -31,4 +31,4 @@ if (DEBUG_MODE) {
  * initiate the main app
  * @var App
  */
-$app = new App;
+$app = new Core\App;

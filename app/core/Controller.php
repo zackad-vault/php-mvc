@@ -1,5 +1,11 @@
 <?php
 
+namespace Core;
+
+use Twig_Environment;
+use Twig_Extension_Debug;
+use Twig_Loader_Filesystem;
+
 /**
  * Application Controller class
  */

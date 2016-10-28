@@ -1,5 +1,9 @@
 <?php
 
+namespace Controllers;
+
+use Core\Controller;
+
 /**
  * Example of default controller
  */
