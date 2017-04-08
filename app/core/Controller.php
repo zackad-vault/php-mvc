@@ -32,7 +32,7 @@ class Controller
     }
 
     /**
-     * Initiate a new object from model
+     * Initiate a new object from model (deprecated)
      * @param  String $model name of model class
      * @return Object        new object of model class
      */
